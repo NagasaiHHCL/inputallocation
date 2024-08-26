@@ -1,0 +1,37 @@
+
+<nav class="navbar fixed-top navcolor navbar-expand-lg ">
+    <a class="navbar-brand" routerLink="/dashboard">
+        <img width="200px" src="../../assets/images/logo 1.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav ml-auto" style="margin-right: 3% !important;">
+      <li class="nav-item">
+        <img src="../../assets/images/Ellipse 2.png" class="imagerounded" alt="">
+      </li>
+       
+        <li class="nav-item dropdown navtexxt">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         {{this.username}}
+         <br>
+         {{this.userno}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+       
+      </ul>
+    
+  </nav>
+
+<div style="margin-top: 7%;">
+<div class="container">
+    <h3 class="inputalloc">Input Allocation</h3>
+</div>
+<hr>
+</div>

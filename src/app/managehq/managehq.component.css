@@ -1,0 +1,32 @@
+.display{
+    display: flex;
+    justify-content: space-between;
+}
+.downloadbtn{
+    color: #fff;
+    background: #FE6C46;
+     font-size: 16px;
+    font-weight: 600;
+    line-height: 4px;
+    letter-spacing: 0em;
+    text-align: center;
+border-radius: 7px;
+padding: 15px 10px;
+border: 2px solid #FE6C46;
+}
+.border{
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+.inputs{
+    border: 1px solid #7C7C7C;
+    width: 260px;
+    height: 40px;
+}
+.imgw{
+    width: 40px;
+}
+.tdvalue td{
+    background-color: #000;
+    color: #fff;
+}

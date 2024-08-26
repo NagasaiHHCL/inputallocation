@@ -1,0 +1,467 @@
+<app-navbar></app-navbar>
+
+<!-- <div class="container" *ngIf="divisionsale">
+  <div class="dispplay">
+    
+    <div class="blockdiv">
+    <div>
+      
+      <label>Select Division</label>
+      <select class="form-control" [(ngModel)]="selectvalue">
+        <option value="">Select Division</option>
+
+        <option *ngFor="let data of divisions" value="{{data.divisioncode}}">{{data.divisionname}}</option>
+        
+      </select>
+      
+    </div>
+      <div class="ml-5">
+         <label for="financialYear"> Year</label>
+         <select id="financialYear" class="form-control" [(ngModel)]="selectedFinancialYear" (ngModelChange)="onFinancialYearChange($event)" name="financialYear">
+          <option value="">Select Year</option>
+          <option *ngFor="let year of financialYears" [ngValue]="year">{{ year }}</option>
+        </select>
+        
+      </div>
+      <div class="ml-5">
+        <label for="financialYear"> Month</label>
+        <select id="month" class="form-control" [(ngModel)]="selectedMonth" name="month">
+          <option [ngValue]="'Select Month'">Select Month</option>
+          <option *ngFor="let month of currentMonthsDropdown" [ngValue]="month.value">{{ month.label }}</option>
+        </select>
+     </div>
+    </div>
+
+    <button class="submitbtn mt-3" (click)="fetchheadquarter()" >Submit</button>
+  </div>
+</div> -->
+
+<div class="container dispplay">
+  <div class="dispplay">
+   <div>   </div>
+      <span>
+          <img class="imagearrow" src="../../assets/images/backarrow.png" alt="backarrow">
+        </span>
+        <span class="ml-3 mt-3">
+      <h4 class="hqname"> {{EmpDivision}}</h4>
+          <!--   <h6 class="hqyear">{{this.selectedFinancialYear}}</h6> -->
+        </span>
+
+
+    <div class="ml-5">
+      <label for="financialYear"> Year</label>
+      <select id="financialYear" class="form-control" [(ngModel)]="selectedFinancialYear" (ngModelChange)="onFinancialYearChange($event)" name="financialYear">
+       <option value="">Select Year</option>
+       <option *ngFor="let year of financialYears" [ngValue]="year">{{ year }}</option>
+     </select>
+     
+   </div>
+   <div class="ml-5">
+     <label for="financialYear"> Month</label>
+     <select id="month" class="form-control" [(ngModel)]="selectedMonth" name="month">
+       <option [ngValue]="'Select Month'">Select Month</option>
+       <option *ngFor="let month of currentMonthsDropdown" [ngValue]="month.value">{{ month.label }}</option>
+     </select>
+  </div>
+  </div>
+
+  <div>
+    <button class="managebutton mr-5" (click)="onHqclick()" >Submit</button>
+  </div>
+  </div>
+  <hr>
+<div class="container-fluid" *ngIf="hqsale">
+  <div class="container dispplay">
+  <div class="dispplay">
+    <span>
+      <img src="../../assets/images/backarrow.png" alt="backarrow">
+    </span>
+    <span class="ml-3 mt-3">
+    <h4 class="hqname"> {{selectedDivisionName}}</h4>
+      <h6 class="hqyear">{{this.selectedFinancialYear}}</h6>
+    </span>
+  </div>
+
+  <div>
+    <button class="managebutton" (click)="onHqclick()" >Manage Inputs</button>
+  </div>
+  </div>
+  <hr>
+  <div class="container dispplay" *ngIf="hqdisplay">
+   
+    <p class="hquarter">HQ({{hqdata.length}}) :</p>
+    <div class="dispplay">
+      <input
+        type="text" width="220px"
+        class="search-input"
+        placeholder="{{ selectedDivision ? selectedDivision : 'Select Head Quarter' }}"
+        [(ngModel)]="searchDivisionQuery"
+        (input)="filterDivisions(searchDivisionQuery)"
+      />
+      <div class="scroll-parent">
+        <div class="scroll-container">
+          <div class="divdata" [style.left.px]="scrollPosition">
+            <h6 *ngFor="let data of filteredDivisions" (click)="onHqNameClick(data.hqcode)">{{data.hqname}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+
+   
+ 
+    <!-- <h6 *ngFor="let data of hqdata">{{data.hqname}}</h6> -->
+    <!-- <div class="dispplay"> -->
+      <button type="button" class="custom-button" data-toggle="modal" #myModalBtn data-target="#myModal">
+        {{ selectedDivision ? selectedDivision : 'More...' }}
+      </button>
+      
+      <!-- The Modal -->
+      <div class="modal" id="myModal" #myModal>
+        <div class="modal-dialog modal-lg modal-lg-extra" >
+          <div class="modal-content">
+      
+            
+            <div class="modal-header">     
+              <input
+        type="text"
+        class="form-control search-input"
+        placeholder="{{ selectedDivision ? selectedDivision : 'Select Head Quarter' }}"
+        [(ngModel)]="searchDivisionQuery"
+        (input)="filterDivisions(searchDivisionQuery)" 
+      />
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+          
+            <div class="">
+            <!-- <h5 class="h5class" (click)="showMoreCities = !showMoreCities">Click here to see more cities</h5> -->
+          </div>
+            <!-- <div class="container containerlength" *ngIf="showMoreCities || searchDivisionQuery.trim() !== ''"> -->
+         
+              <div class="row">
+                 <div class="col-md-3" *ngFor="let data of filteredDivisions"> 
+                  <div class="territory" style="width: 300px;">
+                    <label >
+                       <input
+                        type="radio"
+                        [(ngModel)]="selectedDivision"
+                        [value]="data.HQ"
+                      />
+                      {{ data.hqname }}
+                    </label>
+                  </div>
+                </div> 
+              </div>
+            <!-- </div> -->
+      
+            
+            <!-- </div> -->
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+  
+
+  </div>
+  <hr>
+  <div class="container container1" *ngIf="displayTable">
+    <h1 class="saledat">Sale Data</h1>
+      <div class="customtable">
+        <table  class="full-width-table">
+          <thead >
+            <tr >
+                 <th>Material Name</th>
+                  <th>{{getMonthName(hqmaterialDATA[0].lastmonth)}}</th>
+                 <th>{{getMonthName(hqmaterialDATA[0].currentmonth)}}</th>
+     <!-- <th>{{data.lastmonth}}</th>
+              <th>{{data.currentmonth}}</th>  -->
+              <th>TSE</th>
+              <th>PHPM</th>
+           
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of hqmaterialDATA">
+                <td>{{data.materialname}}</td>
+                <td>{{data.lastmonthsales | number: '1.2-2'}} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalp">
+                  <img style="float: right;" (click)="openpopupforlastmonth(data.hqcode, data.materialcode, data.lastmonth)" src="../../assets/images/info_2.png" alt="">
+                </button> </td>
+              <td>{{data.currentmonthsales | number: '1.2-2'}} <img style="float: right;" (click)="openpopupforcurrent(data.hqcode, data.materialcode,data.currentmonth)" src="../../assets/images/info_2.png" alt=""></td>   
+              <td>{{data.tsecount | number: '1.2-2'}}</td>
+              <td>{{data.phpm | number: '1.2-2'}}</td>
+            </tr>
+     
+          </tbody>
+          <tbody class="tbodytotal">
+            <tr>
+              <td>Total</td>
+              <td>{{calculateTotalCurrentMonthSales() | number: '1.2-2' }}</td>
+              <td>{{calculateTotalpresentMonthSales() | number: '1.2-2' }}</td>
+              <td>{{calculateTSE() | number: '1.2-2' }}</td>
+              <td>{{calculatePHPM() | number: '1.2-2' }}</td>  
+            </tr>
+          </tbody>
+        </table>
+    </div>   
+    <div class="container">
+     
+      
+    
+      <!-- The Modal -->
+      <div class="modal" id="myModalp">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+              <span class="modal-title">{{previousbrandDetails[0]?.materialname}}</span>
+              <span style="float: right !important;">TSE COUNT-{{previousbrandDetails.length}}</span>
+    
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> -->
+            
+            <!-- Modal body -->
+            <div class="modal-body" *ngFor="let data of previousbrandDetails">
+             <div class="dispplay">
+              <span class="modal-title">{{previousbrandDetails[0]?.materialname}}</span>
+              <span style="float: right !important;">TSE COUNT-{{data.tse}}</span>
+             </div>
+             <div class="row divrow" >
+              <div class="col-md-4">
+                <label for="">Therapeutic Group</label>
+                <input type="text" placeholder="{{data.therapeuticname}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Brand</label>
+                <input type="text" readonly placeholder="{{data.brandname}}">
+              </div>
+              
+              <div class="col-md-4">
+                <label for="">Customer Name</label>
+                <input type="text" readonly placeholder="{{data.customername}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">CUstomer ID</label>
+                <input type="text" readonly placeholder="{{data.customercode}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Material Name</label>
+                <input type="text" readonly placeholder="{{data.materialname}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Material Code</label>
+                <input type="text" readonly placeholder="{{data.materialcode}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Sale Quantity</label>
+                <input type="text" readonly placeholder="{{data.saleqty}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Sale Amount</label>
+                <input type="text" readonly placeholder="{{data.saleamount}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Return Quantity</label>
+                <input type="text" readonly placeholder="{{data.returnqty}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Return Amount</label>
+                <input type="text" readonly placeholder="{{data.returnamount}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Net Amount</label>
+                <input type="text" readonly placeholder="{{data.netamount}}">
+              </div>
+              <div class="col-md-4">
+                <label for="">Net Quantity</label>
+                <input type="text" readonly placeholder="{{data.netqty}}">
+              </div>
+             
+    
+    
+             </div>
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="mx-auto d-block closemodal" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>   
+    </div>
+</div>
+
+
+
+
+<div class="container" >
+
+
+
+
+<div class="container" >
+  <div class="dispplay">
+    <div>
+      <h6>Showing {{materialinputs.length}} Inputs</h6>
+      <h6>Select Material Inputs to Manage Inputs</h6>
+    </div>
+    <div>
+      <span>
+        <input type="search"  [(ngModel)]="searchText" (input)="onSearchInputChange()" placeholder="Search with material name">
+      </span>
+      <span>
+        Select All
+      </span>
+    </div>
+  </div>
+  <div class="dispplay">
+    <p class="hquarter">HQ({{hqdata.length}}) :</p>
+    <div class="dispplay">
+      <input
+        type="text" width="220px"
+        class="search-input"
+        placeholder="{{ selectedDivision ? selectedDivision : 'Select Head Quarter' }}"
+        [(ngModel)]="searchDivisionQuery"
+        (input)="filterDivisions(searchDivisionQuery)"
+      />
+      <div class="scroll-parent">
+        <div class="scroll-container">
+          <div class="divdata" [style.left.px]="scrollPosition">
+            <h6 *ngFor="let data of filteredDivisions" (click)="fetchinputsData(data.hqcode)"  >{{data.hqname}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- (change)="switchHeadquarter(data.hqcode)" -->
+    <button type="button" class="custom-button" data-toggle="modal" #myModalBtn data-target="#myModal">
+      {{ selectedDivision ? selectedDivision : 'More...' }}
+    </button>
+    
+    <!-- The Modal -->
+    <div class="modal" id="myModal" #myModal>
+      <div class="modal-dialog modal-lg modal-lg-extra" >
+        <div class="modal-content">
+    
+          
+          <div class="modal-header">     
+            <input
+      type="text"
+      class="form-control search-input"
+      placeholder="{{ selectedDivision ? selectedDivision : 'Select Head Quarter' }}"
+      [(ngModel)]="searchDivisionQuery"
+      (input)="filterDivisions(searchDivisionQuery)" 
+    />
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+        
+          <div class="">
+          <!-- <h5 class="h5class" (click)="showMoreCities = !showMoreCities">Click here to see more cities</h5> -->
+        </div>
+          <!-- <div class="container containerlength" *ngIf="showMoreCities || searchDivisionQuery.trim() !== ''"> -->
+       
+            <div class="row">
+               <div class="col-md-3" *ngFor="let data of filteredDivisions"> 
+                <div class="territory" style="width: 300px;">
+                  <label >
+                     <input
+                      type="radio"
+                      [(ngModel)]="selectedDivision"
+                      [value]="data.HQ"
+                    />
+                    {{ data.hqname }}
+                  </label>
+                </div>
+              </div> 
+            </div>
+          <!-- </div> -->
+    
+          
+          <!-- </div> -->
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    </div>  
+  
+</div>
+<div *ngIf="viewproduct">
+<div class="row">
+  <div *ngFor="let data of materialinputs" class="col-md-6 p-2">
+   <div class="m-2 colinput p-2" [class.highlight]="data.highlight">
+    <label>
+      <input type="checkbox"  (change)="togglePopup(data)">
+      <span>{{data.InputName}} -- {{data.AblQty}}</span>
+    </label>
+   </div>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let data of materialinputs" class="col-md-6 p-2">
+    <div class="m-2 colinput p-2" [class.highlight]="data.highlight">
+      <label>
+        <input type="checkbox" [(ngModel)]="data.selected">
+        <span>{{data.InputName}} -- {{data.AblQty}}</span>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- Popup -->
+<div class="popup" [class.active]="isPopupOpen">
+  <div class="popup-content">
+    <h3>Popup Title</h3>
+    
+    <p>{{selectedData?.InputName}} -- {{selectedData?.AblQty}}</p>
+    <form [formGroup]="popupForm">
+      <input type="number" placeholder="Enter required inputs" formControlName="inputValue" [(ngModel)]="enteredValue">
+      <div *ngIf="popupForm.get('inputValue')?.hasError('valueGreaterThanMax')">
+        <div class="error-message">Value should not be greater than {{selectedData?.AblQty}}</div>
+      </div>
+      <button (click)="storeSelectedProduct()">Store Entered Value</button>
+      <!-- <button (click)="closePopup()">Close</button> -->
+    </form>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="selected-products">
+  <h3>Selected Products:</h3>
+  <ul>
+    <li *ngFor="let product of selectedProducts">
+      <p>Headquarter: {{ product.headquarter }}</p>
+      <p>Product Name: {{ product.productName }}</p>
+      <p>Product Quantity: {{ product.productQuantity }}</p>
+    </li>
+  </ul>
+</div>
+
+
+
+

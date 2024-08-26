@@ -1,0 +1,411 @@
+.dispplay {
+  display: flex;
+  justify-content: space-between;
+}
+.blockdiv {
+  display: flex;
+}
+.imagearrow {
+  width: 50px;
+}
+.submitbtn {
+  padding: 5px 20px;
+  height: 44px;
+  top: 237px;
+  left: 1639px;
+  border-radius: 7px;
+  border: 1px;
+  background-color: #fe6c46;
+  color: #fff;
+}
+label {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.hqyear {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.hqname {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 10px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.managebutton {
+  padding: 7px 14px;
+  border-radius: 7px;
+  background-color: #fe6c46;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 2px solid #fe6c46;
+  color: #fff;
+}
+.dispplay h6 {
+  margin-left: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.custom-button {
+  padding: 7px 14px;
+  border-radius: 7px;
+  background-color: #fe6c46;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 2px solid #fe6c46;
+  color: #fff;
+}
+.hquarter {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #666464;
+}
+/* .divdata{
+    max-width: 450px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    display: inline-flex;
+} */
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.scroll-parent {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+  overflow-x: scroll;
+  width: 650px;
+  cursor: pointer;
+}
+
+.scroll-container {
+  display: inline-flex;
+  white-space: nowrap;
+  position: relative;
+  transition: left 0.3s ease-in-out;
+}
+
+.divdata {
+  display: inline-flex;
+}
+.modal-content {
+  max-height: 400px; /* Set the maximum height to 250px */
+  overflow-y: auto;
+}
+.imgright {
+  float: right;
+  border: none;
+}
+.selected {
+  background-color: #fe6c46;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 3px;
+}
+.nodata {
+  text-align: center;
+  margin-top: 5%;
+  padding: 30px;
+}
+#slickTable {
+  width: 100%;
+  overflow: scroll;
+  min-height: 100px;
+  max-height: 300px;
+}
+#slickTable2 {
+  width: 100%;
+  overflow: scroll;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.customtable td,
+.customtable th {
+  padding: 0.25em;
+  white-space: nowrap;
+}
+.customtable1 td,
+.customtable1 th {
+  padding: 0.25em;
+  white-space: nowrap;
+}
+.customtable1 thead th {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  /* background: #FE6C46; */
+  color: #000;
+  z-index: 1;
+}
+.customtable thead th {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #fe6c46;
+  color: #fff;
+  z-index: 1;
+}
+.customtable1 tbody td {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index: 0px;
+
+  width: 10%;
+}
+.customtable tbody td {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index: 0px;
+}
+.customtable1,
+table {
+  width: 100%;
+  min-height: 30px;
+  max-height: 400px;
+  overflow: auto;
+}
+.customtable,
+table {
+  min-width: 300px;
+  max-width: 100%;
+  overflow-x: scroll;
+  min-height: 100px;
+  max-height: 400px;
+  overflow: scroll;
+  position: relative;
+}
+
+.container1 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.customtable {
+  margin-left: 14%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.full-width-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.full-width-table th,
+.full-width-table td {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tbodytotal tr td {
+  background-color: #fe6c46;
+  color: #ffffff;
+}
+
+.saledat {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.divrow {
+  border: 2px solid grey;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.closemodal {
+  background-color: #fe6c46;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 2px solid #fe6c46;
+}
+
+.colinput {
+  border-radius: 50px;
+  border: 1px solid #fe6c46;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.highlight {
+  background-color: #fe6c46;
+  color: #fff !important; /* Change the background color to your preference */
+}
+.highlight label span {
+  color: #fff !important; /* Change the background color to your preference */
+}
+
+.error-message {
+  color: red;
+  font-size: 18px;
+  font-family: 700;
+}
+.display {
+  display: flex;
+  justify-content: space-between;
+}
+.downloadbtn {
+  color: #fff;
+  background: #fe6c46;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 4px;
+  letter-spacing: 0em;
+  text-align: center;
+  border-radius: 7px;
+  padding: 15px 10px;
+  border: 2px solid #fe6c46;
+}
+.border {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+.inputs {
+  border: 1px solid #7c7c7c;
+  width: 260px;
+  height: 40px;
+}
+.imgw {
+  width: 40px;
+}
+.tdvalue td {
+  background-color: #000;
+  color: #fff;
+}
+
+table {
+  width: max-content;
+  border-collapse: collapse;
+}
+
+.custom-container {
+  border: 2px solid #fe6c46; /* Add a 1px solid border with a light gray color */
+  max-height: 300px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds the container height */
+  padding: 10px;
+  overflow-x: hidden;
+  border-radius: 5px; /* Add padding for a cleaner look */
+}
+.custom-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-container::-webkit-scrollbar-thumb {
+  background-color: #fe6c46; /* Set the scrollbar thumb color */
+  border-radius: 6px;
+}
+
+.custom-container::-webkit-scrollbar-track {
+  background-color: #eee; /* Set the scrollbar track color */
+}
+
+/* Firefox scrollbar styling */
+.custom-container {
+  scrollbar-color: #fe6c46 #eee; /* Set the scrollbar thumb and track colors */
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.inputfield {
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.modal-body .table {
+  max-height: 60vh;
+  min-height: 50vh;
+  overflow-y: auto; /* Add a scrollbar if the content exceeds the height */
+}
+
+/* Add this to your CSS */
+.no-data-message,
+.h4txt {
+  margin-top: 10px;
+  color: #777;
+  text-align: center;
+  font-size: 1.5rem;
+  font-size: 500;
+}

@@ -1,0 +1,25 @@
+.navcolor{
+    background-color: #272A2F;
+}
+.imagerounded{
+    border-radius: 50%;
+    width: 50px;
+}
+.navtexxt a{
+    color: #fff;
+}
+.dropdown-menu{
+    background-color: #272A2F;
+}
+hr{
+    
+color:#CCCCCC ;
+}
+.inputalloc{
+font-size: 22px;
+font-weight: 500;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+
+}

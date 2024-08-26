@@ -1,0 +1,263 @@
+.dispplay{
+    display: flex;
+    justify-content: space-between;
+}
+.blockdiv{
+    display: flex;
+
+}
+.submitbtn{
+   padding: 5px 20px;
+height: 44px;
+top: 237px;
+left: 1639px;
+border-radius: 7px;
+border: 1px;
+background-color: #FE6C46;
+color: #fff;
+}
+label{
+   color: #000000;
+font-size: 15px;
+font-weight: 500;
+line-height: 2px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.hqyear{
+ color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.hqname{
+    color: #000000;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.managebutton{
+padding: 7px 14px;
+border-radius: 7px;
+background-color: #FE6C46;
+font-size: 16px;
+font-weight: 600;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+border: 2px solid #FE6C46;
+color: #fff;
+}
+.dispplay h6{
+    margin-left: 10px;
+  
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+}
+.custom-button{
+    padding: 7px 14px;
+border-radius: 7px;
+background-color: #FE6C46;
+font-size: 16px;
+font-weight: 600;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+border: 2px solid #FE6C46;
+color: #fff;
+}
+.hquarter{
+font-size: 18px;
+font-weight: 400;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #666464;
+}
+/* .divdata{
+    max-width: 450px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    display: inline-flex;
+} */
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.scroll-parent {
+  display: flex;
+  align-items: center;
+  margin: 0 10px; 
+  position: relative;
+  overflow-x: scroll;
+  width: 650px;
+  cursor: pointer;
+}
+
+.scroll-container {
+  display: inline-flex;
+  white-space: nowrap;
+  position: relative;
+  transition: left 0.3s ease-in-out;
+}
+
+.divdata {
+  display: inline-flex;
+ 
+}
+
+
+.customtable {
+  height: 200px;
+  overflow: scroll;
+  position: relative;
+}
+
+.customtable table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+.customtable td, .customtable th {
+  padding: 0.25em;
+}
+
+.customtable thead th {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #FE6C46;
+  color: #FFF;
+  z-index: 1;
+ 
+ 
+}
+.customtable tbody td {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index:0px;
+ 
+ 
+}
+.container1 {
+ 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.customtable {
+  margin-left: 14%;
+  width: 100%;
+  overflow-x: auto; 
+}
+
+.full-width-table {
+  width: 100%;
+  
+  border-collapse: collapse;
+  table-layout: fixed; 
+}
+
+.full-width-table th,
+.full-width-table td {
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.tbodytotal tr{
+  background-color:  #FE6C46;
+  color: #ffffff;
+}
+
+.saledat{
+font-size: 18px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+}
+.divrow{
+  border: 2px solid grey;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.closemodal{
+background-color: #FE6C46;
+color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.colinput{
+border-radius: 50px;
+  border: 1px solid #FE6C46;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.highlight {
+  background-color: #FE6C46;
+  color: #fff !important; /* Change the background color to your preference */
+}
+.highlight label span {
+ 
+  color: #fff !important; /* Change the background color to your preference */
+}
+
+.error-message {
+  color: red;
+}
